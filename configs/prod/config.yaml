@@ -1,0 +1,31 @@
+server:
+  http:
+    addr: 0.0.0.0:80
+    readtimeout: 1s
+    writetimeout: 3s
+
+data:
+  logger:
+    filepath: /opt/log/bbs.log
+    loglevel: debug
+    isconsole: true
+    logsize: 1024
+
+  database:
+    driver: mysql
+    username: root
+    password: xiaodai521
+    protocol: tcp
+    address: 127.0.0.1
+    port: 3306
+    dbname: miniblog
+    params: charset=utf8mb4&sql_notes=false&timeout=90s&collation=utf8mb4_general_ci&parseTime=True&loc=Local
+    maxidleconn: 100
+    maxopenconn: 1000
+    keepalive: 3600s
+  redis:
+    addr: 127.0.0.1:6379
+    prefix: bbs_
+    dialtimeout: 1
+    readtimeout: 4
+    writetimeout: 6
