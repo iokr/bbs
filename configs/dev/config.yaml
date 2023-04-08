@@ -1,6 +1,6 @@
 server:
   http:
-    addr: 0.0.0.0:80
+    addr: 0.0.0.0:8080
     readtimeout: 1s
     writetimeout: 3s
 
@@ -18,7 +18,7 @@ data:
     protocol: tcp
     address: 127.0.0.1
     port: 3306
-    dbname: miniblog
+    dbname: bbs
     params: charset=utf8mb4&sql_notes=false&timeout=90s&collation=utf8mb4_general_ci&parseTime=True&loc=Local
     maxidleconn: 100
     maxopenconn: 1000

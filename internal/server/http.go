@@ -8,7 +8,7 @@ import (
 	"github.com/iokr/bbs/internal/middleware"
 )
 
-func NewHTTPServer(c *conf.Server, logger *log.Helper) *http.Server {
+func NewHTTPServer(c *conf.Server, logger *log.Helper) (srv *http.Server, engine *gin.Engine) {
 	opts := []http.ServerOption{
 		http.Address(":80"),
 	}
@@ -18,10 +18,10 @@ func NewHTTPServer(c *conf.Server, logger *log.Helper) *http.Server {
 	}
 	gin.SetMode(gin.DebugMode)
 
-	router := gin.New()
-	router.Use(gin.Recovery(), middleware.Logger(logger))
+	ginEngine := gin.New()
+	ginEngine.Use(gin.Recovery(), middleware.Logger(logger))
 
-	srv := http.NewServer(opts...)
-	srv.HandlePrefix("/", router)
-	return srv
+	srv = http.NewServer(opts...)
+	srv.HandlePrefix("/", ginEngine)
+	return srv, ginEngine
 }

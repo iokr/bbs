@@ -33,7 +33,7 @@ func ParseToken(c *gin.Context) {
 		return
 	}
 
-	userId := uint64(claims["userId"].(float64))
+	userId := uint(claims["userId"].(float64))
 	// todo 验证userId是否正确
 	c.Set("userId", userId)
 	c.Next()

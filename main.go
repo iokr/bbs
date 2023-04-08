@@ -5,9 +5,12 @@ import (
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/transport/http"
+	"github.com/iokr/bbs/api"
 	"github.com/iokr/bbs/core/database/orm"
 	"github.com/iokr/bbs/core/log"
+	"github.com/iokr/bbs/internal/biz"
 	"github.com/iokr/bbs/internal/conf"
+	"github.com/iokr/bbs/internal/data"
 	"github.com/iokr/bbs/internal/server"
 )
 
@@ -39,11 +42,21 @@ func initApp(c *conf.Config) (*kratos.App, func(), error) {
 		panic(err)
 	}
 
-	_ = bbsDb
-
 	logger := log.NewStdLogger(os.Stdout)
 
-	httpServer := server.NewHTTPServer(c.Server, log.NewHelper(logger))
+	// ================================== repo ==================================
+	userRepo := data.NewUserRepo(bbsDb)
+	articleRepo := data.NewArticleRepo(bbsDb)
+
+	// ================================== biz ==================================
+	userBiz := biz.NewUserBiz(userRepo)
+	articleBiz := biz.NewArticleBiz(articleRepo)
+
+	// ================================== service ==================================
+
+	httpServer, ginEngine := server.NewHTTPServer(c.Server, log.NewHelper(logger))
+
+	api.RegisterHTTPServerRouter(ginEngine, userBiz, articleBiz)
 
 	app := newApp(httpServer)
 	return app, func() {
