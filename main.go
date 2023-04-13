@@ -51,12 +51,13 @@ func initApp(c *conf.Config) (*kratos.App, func(), error) {
 	// ================================== biz ==================================
 	userBiz := biz.NewUserBiz(userRepo)
 	articleBiz := biz.NewArticleBiz(articleRepo)
+	indexBiz := biz.NewIndexBiz(userRepo, articleRepo)
 
 	// ================================== service ==================================
 
 	httpServer, ginEngine := server.NewHTTPServer(c.Server, log.NewHelper(logger))
 
-	api.RegisterHTTPServerRouter(ginEngine, userBiz, articleBiz)
+	api.RegisterHTTPServerRouter(ginEngine, indexBiz, userBiz, articleBiz)
 
 	app := newApp(httpServer)
 	return app, func() {

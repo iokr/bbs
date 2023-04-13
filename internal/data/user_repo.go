@@ -87,3 +87,30 @@ func (r *UserRepo) ExistByEmail(ctx context.Context, email string) (has bool, er
 	cond["is_deleted"] = 0
 	return r.ExistByCond(ctx, cond)
 }
+
+func (r *UserRepo) FindByIds(ctx context.Context, ids []uint) ([]*User, error) {
+	if len(ids) == 0 {
+		return nil, nil
+	}
+
+	var users []*User
+	err := r.engine.Table(r.tableName).WithContext(ctx).
+		Where("id IN ?", ids).Find(&users).Error
+	if err != nil {
+		return nil, err
+	}
+	return users, nil
+}
+
+func (r *UserRepo) FindMapByIds(ctx context.Context, ids []uint) (map[uint]*User, error) {
+	users, err := r.FindByIds(ctx, ids)
+	if err != nil {
+		return nil, err
+	}
+
+	userMap := make(map[uint]*User)
+	for _, user := range users {
+		userMap[user.ID] = user
+	}
+	return userMap, nil
+}

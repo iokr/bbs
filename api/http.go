@@ -7,19 +7,32 @@ import (
 	"github.com/iokr/bbs/internal/middleware"
 )
 
-func RegisterHTTPServerRouter(router *gin.Engine, userBiz *biz.UserBiz,
-	articleBiz *biz.ArticleBiz) {
+func RegisterHTTPServerRouter(router *gin.Engine, indexBiz *biz.IndexBiz,
+	userBiz *biz.UserBiz, articleBiz *biz.ArticleBiz) {
 	userRest := rest.NewUserRest(userBiz)
 	articleRest := rest.NewArticleRest(articleBiz)
+	indexRest := rest.NewIndexRest(indexBiz)
+
+	router.Static("/static/", "./static")
+	router.StaticFile("/favicon.ico", "./static/favicon.ico")
+	router.LoadHTMLGlob("./api/views/*")
+
+	// index
+	router.GET("/", indexRest.IndexPage)
+	router.GET("/articles", indexRest.MoreArticles)
 
 	// user
+	router.GET("/login", userRest.LoginPage)
+	router.GET("/register", userRest.RegisterPage)
+
 	router.POST("/register", userRest.Register)
 	router.POST("/login", userRest.Login)
 
 	// 游客
 
 	// article
-	user := router.Group("/user", middleware.ParseToken)
+	user := router.Group("/user", middleware.CheckUserSession)
+	user.GET("/article", articleRest.CreateArticlePage)
 	user.POST("/article", articleRest.CreateArticle)
 	user.PUT("/article/:id", articleRest.UpdateArticle)
 }

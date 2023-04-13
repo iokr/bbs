@@ -1,6 +1,8 @@
 package rest
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"github.com/iokr/bbs/api/request"
@@ -16,6 +18,11 @@ type ArticleRest struct {
 
 func NewArticleRest(articleBiz *biz.ArticleBiz) *ArticleRest {
 	return &ArticleRest{articleBiz: articleBiz}
+}
+
+func (r *ArticleRest) CreateArticlePage(c *gin.Context) {
+	respMap := make(map[string]interface{})
+	c.HTML(http.StatusOK, "article_add.html", respMap)
 }
 
 func (r *ArticleRest) CreateArticle(ctx *gin.Context) {

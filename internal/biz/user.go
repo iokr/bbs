@@ -77,6 +77,7 @@ func (l *UserBiz) Login(ctx context.Context, userReq *request.LoginRequest) (*re
 		return nil, err
 	}
 	return &request.LoginReply{
-		Token: token,
+		UserId: user.ID,
+		Token:  token,
 	}, nil
 }

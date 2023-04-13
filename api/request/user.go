@@ -1,18 +1,19 @@
 package request
 
 type RegisterRequest struct {
-	UserName string `json:"user_name"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
+	UserName string `form:"user_name" json:"user_name"`
+	Email    string `form:"email" json:"email"`
+	Password string `form:"password" json:"password"`
 }
 
 type LoginRequest struct {
-	Email    string `json:"email"`
-	Password string `json:"password"`
+	Email    string `form:"email" json:"email"`
+	Password string `form:"password" json:"password"`
 }
 
 type LoginReply struct {
-	Token string `json:"token"`
+	UserId uint   `json:"user_id"`
+	Token  string `json:"token"`
 }
 
 // ------------------------------ type -----------------------------------

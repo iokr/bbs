@@ -1,0 +1,391 @@
+{{define "index.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>{{.site_name}}</title>
+    <!-- CSS files -->
+    <link href="/static/tabler/dist/css/tabler.min.css" rel="stylesheet"/>
+    <link href="/static/tabler/dist/css/demo.min.css" rel="stylesheet"/>
+    <style>
+        @import url('https://rsms.me/inter/inter.css');
+
+        :root {
+            --tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+        }
+
+        body {
+            font-feature-settings: "cv03", "cv04", "cv11";
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-md navbar-light sticky-top d-print-none">
+        <div class="container-xl">
+            <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+                <a href="/">
+                    <img src="/static/logo.svg" class="navbar-brand-image" width="110" height="32" alt="Tabler">
+                </a>
+            </h1>
+            <div class="navbar-nav flex-row order-md-last">
+                <div class="nav-item dropdown d-none d-md-flex me-3">
+                    <form action="#" method="get">
+                        <div class="input-icon">
+                            <span class="input-icon-addon">
+                              <svg xmlns="http://www.w3.org/2000/svg"
+                                   class="icon" width="24" height="24"
+                                   viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                   fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                  <circle cx="10" cy="10" r="7"/>
+                                  <line x1="21" y1="21" x2="15" y2="15"/>
+                              </svg>
+                            </span>
+                            <input type="text" value="" class="form-control" placeholder="Search…"
+                                   aria-label="Search in website">
+                        </div>
+                    </form>
+                </div>
+                <div class="nav-item">
+                    <a href="/login" class="btn w-100" style="border-width: 0;">
+                        登 录
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-wrapper">
+        <!-- Page body -->
+        <div class="page-body">
+            <div class="container-xl">
+                <div class="row row-cards">
+                    <div class="col-lg-2">
+                        <div class="card d-none d-md-block" style="display: block;position: sticky;top: 70px;">
+                            <div class="table-responsive">
+                                <table class="table table-vcenter card-table">
+                                    <tbody>
+                                    <tr>
+                                        <td style="border-bottom-width:0px;padding-top: 0.35rem;padding-bottom: 0.35rem;">
+                                            <a href="#tuijian" class="btn btn-ghost-primary w-100"
+                                               style="justify-content: left;color:black;--tblr-btn-hover-bg: #f5f5f5;--tblr-btn-active-bg: #f5f5f5;border:0 solid white;">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                     class="icon icon-inline" width="24" height="24"
+                                                     viewBox="0 0 24 24" stroke-width="2"
+                                                     stroke="currentColor" fill="none"
+                                                     stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+                                                </svg>
+                                                推荐
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom-width:0px;padding-top: 0.35rem;padding-bottom: 0.35rem;">
+                                            <a href="#zuixin" class="btn btn-ghost-primary w-100"
+                                               style="justify-content: left;color:white;background-color:#ea6f5a;--tblr-btn-hover-bg: #f5f5f5;--tblr-btn-active-bg: #f5f5f5;border:0 solid white">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                     class="icon icon-inline" width="24" height="24"
+                                                     viewBox="0 0 24 24" stroke-width="2"
+                                                     stroke="currentColor" fill="none"
+                                                     stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+                                                </svg>
+                                                最新
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom-width:0px;padding-top: 0.35rem;padding-bottom: 0.35rem;">
+                                            <a href="#guanzhu" class="btn btn-ghost-primary w-100"
+                                               style="justify-content: left;color:black;--tblr-btn-hover-bg: #f5f5f5;--tblr-btn-active-bg: #f5f5f5;border:0 solid white">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                     class="icon icon-inline" width="24" height="24"
+                                                     viewBox="0 0 24 24" stroke-width="2"
+                                                     stroke="currentColor" fill="none"
+                                                     stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+                                                </svg>
+                                                关注
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom-width:0px;padding-top: 0.35rem;padding-bottom: 0.35rem;">
+                                            <a href="#jiaoliu" class="btn btn-ghost-primary w-100"
+                                               style="justify-content: left;color:black;--tblr-btn-hover-bg: #f5f5f5;--tblr-btn-active-bg: #f5f5f5;border:0 solid white">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                     class="icon icon-inline" width="24" height="24"
+                                                     viewBox="0 0 24 24" stroke-width="2"
+                                                     stroke="currentColor" fill="none"
+                                                     stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+                                                </svg>
+                                                交流
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom-width:0px;padding-top: 0.35rem;padding-bottom: 0.35rem;">
+                                            <a href="#tiwen" class="btn btn-ghost-primary w-100"
+                                               style="justify-content: left;color:black;--tblr-btn-hover-bg: #f5f5f5;--tblr-btn-active-bg: #f5f5f5;border:0 solid white">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                     class="icon icon-inline" width="24" height="24"
+                                                     viewBox="0 0 24 24" stroke-width="2"
+                                                     stroke="currentColor" fill="none"
+                                                     stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+                                                </svg>
+                                                提问
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom-width:0px;padding-top: 0.35rem;padding-bottom: 0.35rem;">
+                                            <a href="#kaiyuan" class="btn btn-ghost-primary w-100"
+                                               style="justify-content: left;color:black;--tblr-btn-hover-bg: #f5f5f5;--tblr-btn-active-bg: #f5f5f5;border:0 solid white">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                     class="icon icon-inline" width="24" height="24"
+                                                     viewBox="0 0 24 24" stroke-width="2"
+                                                     stroke="currentColor" fill="none"
+                                                     stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+                                                </svg>
+                                                开源
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom-width:0px;padding-top: 0.35rem;padding-bottom: 0.35rem;">
+                                            <a href="#moyu" class="btn btn-ghost-primary w-100"
+                                               style="justify-content: left;color:black;--tblr-btn-hover-bg: #f5f5f5;--tblr-btn-active-bg: #f5f5f5;border:0 solid white">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                     class="icon icon-inline" width="24" height="24"
+                                                     viewBox="0 0 24 24" stroke-width="2"
+                                                     stroke="currentColor" fill="none"
+                                                     stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+                                                </svg>
+                                                摸鱼
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="row row-cards">
+                            <div class="col-lg-8">
+                                <div class="row row-cards">
+                                    <div class="space-y article-list"></div>
+                                </div>
+                                <div class="more-article text-center py-3">
+                                    <a href="javascript:void(0);"
+                                       class="btn btn-square w-33 fs-5 fw-normal"
+                                       style="background-color: #00d1b2;color: white;">查看更多</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="row row-cards">
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h3 class="card-title">陆续开放中...</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h3 class="card-title">陆续开放中...</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer footer-transparent d-print-none">
+            <div class="container-xl">
+                <div class="row text-center align-items-center flex-row-reverse">
+                    <div class="col-lg-auto ms-lg-auto">
+                        <ul class="list-inline list-inline-dots mb-0">
+                            <li class="list-inline-item">
+                                <a href="https://github.com/iokr/bbs" class="link-secondary">Documentation</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/iokr/bbs" target="_blank"
+                                   class="link-secondary" rel="noopener">Source code</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                        <ul class="list-inline list-inline-dots mb-0">
+                            <li class="list-inline-item">
+                                Copyright &copy; 2023
+                                <a href="https://github.com/iokr/bbs" class="link-secondary">bbs</a>.
+                                All rights reserved.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<!-- Libs JS -->
+<script src="/static/lib/jquery-3.6.4.min.js"></script>
+
+<!-- Tabler Core -->
+<script src="/static/tabler/dist/js/tabler.min.js" defer></script>
+<script src="/static/tabler/dist/js/demo.min.js" defer></script>
+<script type="text/javascript">
+    // 首次加载文章列表
+    let isNoMoreArticle = false;
+    let currentMinArticleId = 0;
+    let getMoreArticlesUrl = "/articles";
+    let noMoreArticlesStyle = '<span class="btn btn-square w-33 fs-5 fw-normal disabled"\n' +
+        ' style="background-color: #00d1b2;color: white;">我是有底线的</span>';
+
+    // 首页首次加载获取文章列表
+    getMoreArticles(getMoreArticlesUrl);
+
+    function getMoreArticles(url) {
+        $.ajax({
+            url: url,
+            type: 'get',
+            data: {
+                'current_article_id': currentMinArticleId,
+            },
+            dataType: 'json',
+            success: function (result) {
+                if (result.code === 0) {
+                    if (result.result.length <= 0) {
+                        isNoMoreArticle = true
+                        $('.more-article').html(noMoreArticlesStyle);
+                        return
+                    }
+
+                    drawMoreArticles(result.result);
+                } else {
+                    alert(result.message);
+                }
+            },
+            error: function (xhr, textStatus) {
+                // alert("操作错误")
+            }
+        });
+    }
+
+    function drawMoreArticles(data) {
+        $.each(data, function (i, item) {
+            let userUrl = "/user/";
+            let articleUrl = "/article/";
+            let articleDianzanUrl = "/dianzan";
+            let articlePinglunUrl = "/pinglun";
+            let tagUrl = "/tag/";
+
+            currentMinArticleId = item.article.id;
+            let articleItem = '<div class="card">' +
+                '<div class="card-body" style="padding-left: 1.5rem!important;">' +
+                '<div class="row row-0 mb-3">' +
+                '<div class="col-auto">' +
+                '<div class="avatar rounded-circle"' +
+                ' style="background-image: url(' + item.avatar_url + ')"></div>' +
+                '</div>' +
+                '<div class="col">' +
+                '<div class="mx-3 fw-bolder">' +
+                ' <a href=' + userUrl + item.user_id +
+                ' class="text-decoration-none" style="color: #70727C">' + item.user_name +
+                '</a></div>' +
+                '<div class="mx-3 fw-bolder">' +
+                '<span class="fs-6 fw-lighter">发布于 ' + item.article.created_time +
+                '</span></div></div></div>' +
+                '<div class="row">' +
+                '<div class="col">' +
+                ' <a href=' + articleUrl + item.article.id + ' class="text-decoration-none"' +
+                ' style="color: black">' +
+                '<h2 class="text-truncate">' + item.article.title + '</h2>' +
+                '<div>' + item.article.abstract + '</div></a></div></div>' +
+                '<div class="row">' +
+                '<div class="col-md">' +
+                '<div class="mt-3 list-inline mb-0 text-muted">' +
+                '<div class="list-inline-item">' +
+                ' <a href=' + articleUrl + item.article.id + articleDianzanUrl + ' class="text-decoration-none"' +
+                ' style="color: #616876">' +
+                '<svg xmlns="http://www.w3.org/2000/svg"' +
+                ' class="icon icon-inline" width="24" height="24"' +
+                ' viewBox="0 0 24 24" stroke-width="2"' +
+                ' stroke="currentColor" fill="none"' +
+                ' stroke-linecap="round" stroke-linejoin="round">' +
+                '<path stroke="none" d="M0 0h24v24H0z"' +
+                ' fill="none"></path>' +
+                '<path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>' +
+                '</svg></a>' +
+                ' <span class="fs-6 fw-normal">点赞 ' + item.article.like_count + '</span></div>' +
+                ' <div class="list-inline-item">' +
+                ' <a href=' + articleUrl + item.article.id + articlePinglunUrl + ' class="text-decoration-none"' +
+                ' style="color: #616876">' +
+                ' <svg xmlns="http://www.w3.org/2000/svg"' +
+                ' class="icon icon-inline" width="24" height="24"' +
+                ' viewBox="0 0 24 24" stroke-width="2"' +
+                ' stroke="currentColor" fill="none"' +
+                ' stroke-linecap="round" stroke-linejoin="round">' +
+                '<path stroke="none" d="M0 0h24v24H0z"' +
+                ' fill="none"></path>' +
+                '<path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4"></path>' +
+                '<path d="M12 11l0 .01"></path>' +
+                '<path d="M8 11l0 .01"></path>' +
+                '<path d="M16 11l0 .01"></path>' +
+                '</svg></a>' +
+                ' <span class="fs-6 fw-normal">评论 ' + item.article.comment_count + '</span></div>' +
+                ' <div class="list-inline-item">' +
+                ' <svg xmlns="http://www.w3.org/2000/svg"' +
+                ' class="icon icon-inline" width="24" height="24"' +
+                ' viewBox="0 0 24 24" stroke-width="2"' +
+                ' stroke="currentColor" fill="none"' +
+                ' stroke-linecap="round" stroke-linejoin="round">' +
+                '<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>' +
+                '<path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>' +
+                '<path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>' +
+                '<path d="M3 6l0 13"></path>' +
+                '<path d="M12 6l0 13"></path>' +
+                '<path d="M21 6l0 13"></path></svg>' +
+                ' <span class="fs-6 fw-normal">浏览 ' + item.article.view_count +
+                '</span></div></div></div>' +
+                '<div class="col-md-auto d-none d-md-flex me-3">' +
+                '<div class="mt-3 badges">' +
+                ' <a href=' + tagUrl + "ss" +
+                ' class="badge badge-outline text-muted border fw-normal badge-pill text-decoration-none">PHP</a>' +
+                ' <a href=' + tagUrl + "ss" +
+                ' class="badge badge-outline text-muted border fw-normal badge-pill text-decoration-none">Laravel</a>' +
+                '</div></div></div></div></div>';
+            $('.article-list').append(articleItem);
+        })
+    }
+
+    $('.more-article').click(function () {
+        if (isNoMoreArticle || currentMinArticleId <= 0) {
+            return
+        }
+        getMoreArticles(getMoreArticlesUrl);
+    });
+</script>
+</body>
+</html>
+{{end}}

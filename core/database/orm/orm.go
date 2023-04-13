@@ -6,6 +6,7 @@ import (
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 )
 
 type Config struct {
@@ -25,7 +26,9 @@ type Config struct {
 func NewMySQL(c *Config) (db *gorm.DB, err error) {
 	dataSourceName := fmt.Sprintf("%s:%s@%s(%s:%d)/%s?%s",
 		c.UserName, c.Password, c.Protocol, c.Address, c.Port, c.DbName, c.Params)
-	db, err = gorm.Open(mysql.Open(dataSourceName), &gorm.Config{})
+	db, err = gorm.Open(mysql.Open(dataSourceName), &gorm.Config{
+		Logger: logger.Default.LogMode(logger.Info),
+	})
 	if err != nil {
 		return nil, err
 	}

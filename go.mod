@@ -1,6 +1,6 @@
 module github.com/iokr/bbs
 
-go 1.20
+go 1.19
 
 require (
 	github.com/gin-gonic/gin v1.9.0
@@ -8,6 +8,7 @@ require (
 	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/google/uuid v1.3.0
+	github.com/gorilla/sessions v1.2.1
 	github.com/samber/lo v1.38.1
 	github.com/spf13/cast v1.5.0
 	gopkg.in/yaml.v3 v3.0.1
@@ -29,6 +30,7 @@ require (
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
+	github.com/gorilla/securecookie v1.1.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect

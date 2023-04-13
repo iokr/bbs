@@ -70,3 +70,16 @@ func (r *ArticleRepo) ExistByCond(ctx context.Context, cond map[string]interface
 	}
 	return true, nil
 }
+
+func (r *ArticleRepo) FindOrderByIdAndLimit(ctx context.Context, id uint, limit int) ([]*Article, error) {
+	var articles []*Article
+	db := r.engine.Table(r.tableName).WithContext(ctx)
+	if id > 0 {
+		db = db.Debug().Where("id < ?", id)
+	}
+
+	if err := db.Order("id desc").Limit(limit).Find(&articles).Error; err != nil {
+		return nil, err
+	}
+	return articles, nil
+}
