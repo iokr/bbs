@@ -45,3 +45,10 @@ func (r *IndexRest) MoreArticles(c *gin.Context) {
 	}
 	response.ServerJson(c.Writer, result, nil)
 }
+
+func (r *IndexRest) ArticleDetail(c *gin.Context) {
+	respMap := make(map[string]interface{})
+	respMap["site_name"] = "BBS"
+
+	c.HTML(http.StatusOK, "article_detail.html", respMap)
+}
