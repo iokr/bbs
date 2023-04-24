@@ -19,6 +19,8 @@ func RegisterHTTPServerRouter(router *gin.Engine, indexBiz *biz.IndexBiz,
 
 	// index
 	router.GET("/", indexRest.IndexPage)
+	router.GET("/index", indexRest.IndexLoginPage)
+
 	router.GET("/articles", indexRest.MoreArticles)
 	router.GET("/user/:userId/article/:articleId", indexRest.ArticleDetail)
 

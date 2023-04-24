@@ -27,6 +27,13 @@ func (r *IndexRest) IndexPage(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", respMap)
 }
 
+func (r *IndexRest) IndexLoginPage(c *gin.Context) {
+	respMap := make(map[string]interface{})
+	respMap["site_name"] = "BBS"
+
+	c.HTML(http.StatusOK, "index_login.html", respMap)
+}
+
 func (r *IndexRest) MoreArticles(c *gin.Context) {
 	var param request.MoreArticleRequest
 
