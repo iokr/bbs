@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>首页</title>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="/statics/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/statics/css/bbs.css"/>
+    <link rel="stylesheet" href="/statics/css/docs.css"/>
+</head>
+<body>
+
+<div class="page">
+    <!-- Navbar -->
+    <header class="navbar navbar-light navbar-expand-lg sticky-top">
+        <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+            <div class="bd-navbar-toggle">
+                <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bbsNavbar"
+                        aria-controls="bbsNavbar" aria-label="Toggle docs navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         class="bi" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0
+                        1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3
+                        3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div>
+                <a class="navbar-brand p-0 me-0 me-lg-2" href="/"
+                   aria-label="Bootstrap">
+                    <img src="/statics/logo.svg" class="navbar-brand-image" width="110" height="32" alt="Tabler">
+                </a>
+                <a href="#huati" class="nav-link" data-bs-toggle="dropdown">话题</a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" style="min-width: auto">
+                    <a class="dropdown-item" style="min-width: auto" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline me-2" width="24" height="24"
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M3 19h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"></path>
+                            <path d="M12.5 5.5l4 4"></path>
+                            <path d="M4.5 13.5l4 4"></path>
+                            <path d="M21 15v4h-8l4 -4z"></path>
+                        </svg>
+                        <span class="me-3">发帖子1</span>
+                    </a>
+                    <a class="dropdown-item" style="min-width: auto" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline me-2" width="24" height="24"
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M19 10h-14"></path>
+                            <path d="M5 6h14"></path>
+                            <path d="M14 14h-9"></path>
+                            <path d="M5 18h6"></path>
+                            <path d="M18 15v6"></path>
+                            <path d="M15 18h6"></path>
+                        </svg>
+                        <span class="me-3">发文章2</span>
+                    </a>
+                    <a class="dropdown-item" style="min-width: auto" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline me-2" width="24" height="24"
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z"></path>
+                            <path d="M16 7h4"></path>
+                            <path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3"></path>
+                        </svg>
+                        <span class="me-3">发提问3</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="d-flex d-lg-none">
+                <a href="#plus" class="nav-link px-0" data-bs-toggle="dropdown">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md icon-tabler icon-tabler-circle-plus"
+                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <line x1="9" y1="12" x2="15" y2="12"></line>
+                        <line x1="12" y1="9" x2="12" y2="15"></line>
+                    </svg>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" style="min-width: auto">
+                    <a class="dropdown-item" style="min-width: auto" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline me-2" width="24" height="24"
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M3 19h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"></path>
+                            <path d="M12.5 5.5l4 4"></path>
+                            <path d="M4.5 13.5l4 4"></path>
+                            <path d="M21 15v4h-8l4 -4z"></path>
+                        </svg>
+                        <span class="me-3">发帖子</span>
+                    </a>
+                    <a class="dropdown-item" style="min-width: auto" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline me-2" width="24" height="24"
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M19 10h-14"></path>
+                            <path d="M5 6h14"></path>
+                            <path d="M14 14h-9"></path>
+                            <path d="M5 18h6"></path>
+                            <path d="M18 15v6"></path>
+                            <path d="M15 18h6"></path>
+                        </svg>
+                        <span class="me-3">发文章</span>
+                    </a>
+                    <a class="dropdown-item" style="min-width: auto" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline me-2" width="24" height="24"
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z"></path>
+                            <path d="M16 7h4"></path>
+                            <path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3"></path>
+                        </svg>
+                        <span class="me-3">发提问</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="offcanvas-lg offcanvas-start flex-grow-1" tabindex="-1" id="bbsNavbar"
+                 aria-labelledby="bbsNavbarOffcanvasLabel" data-bs-scroll="true">
+                <div class="offcanvas-header px-4 pb-0">
+                    <h5 class="offcanvas-title text-black" id="bbsNavbarOffcanvasLabel">Bootstrap</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            aria-label="Close" data-bs-target="#bbsNavbar">
+                    </button>
+                </div>
+
+                <div class="offcanvas-body p-4 pt-0 p-lg-0">
+                    <hr class="d-lg-none text-black-50">
+                    <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
+                        <li class="nav-item col-12 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2 active" href="#">话题</a>
+                        </li>
+                        <li class="nav-item col-12 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="#">文章</a>
+                        </li>
+                    </ul>
+
+                    <hr class="d-lg-none text-black-50">
+                    <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+                        <li class="nav-item col-12 col-lg-auto">
+                            <input type="text" value="" class="form-control" placeholder="Search…"
+                                   aria-label="Search in website">
+                        </li>
+                        <li class="nav-item col-12 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="/login">发表文章</a>
+                        </li>
+                        <li class="nav-item col-12 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="/login">登 录</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="page-wrapper">
+        <!-- Page body -->
+
+        <!-- Footer -->
+    </div>
+</div>
+
+<!-- JS files -->
+<script src="/statics/lib/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/statics/js/docs.min.js"></script>
+</body>
+</html>
